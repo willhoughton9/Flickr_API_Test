@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>ijlkasjdsaf</title>
+
+</head>
+<body>
+<h1 style="width:100%;text-align:center;font-family:Arial, Helvetica, sans-serif">
+Welcome to Flickr Photo Search
+</h1>
+<div>
+<img src= "http://s3.froknowsphoto.com/wp-content/uploads/2013/05/flickr-logo.png" alt="Flickr Logo" width =200 height=150>
+<%=form_tag( controller: 'hello', action: 'get_picture') do%>
+<%=text_field_tag 'name'%>
+<%= submit_tag 'Search' %>
+<% end %>
+</div>
+</body>
+</html>
