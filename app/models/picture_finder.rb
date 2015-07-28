@@ -9,11 +9,9 @@ class PictureFinder
       FlickRaw.api_key = '7a4acf49b95245125c3c33807363f635'
       FlickRaw.shared_secret = '966dc77777a5aaf7'
       #tags = name.split(" ")
-      list = flickr.photos.search(tag_mode_all: name)
+      list = flickr.photos.search(tags: name)
       return photo_url = "invalid" if list.size == 0
-      # let's get the photo_id for the first picture in the list
-      photo_id = list.first.id
-      photo = flickr.photos.getInfo(photo_id: photo_id)
+      photo = flickr.photos.getInfo(photo_id: list[Random.new.rand(0..list.size-1)].id)
 
       # get the photo url
       # url_b means image large
