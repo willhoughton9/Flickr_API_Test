@@ -1,61 +1,18 @@
 <html>
 <head>
-<style>
-.content {
-	position:relative;
-	width:80%;
-	text-align:center;		
-	margin-left:auto;
-	margin-right:auto;
-}
-.opacity {
-<%if params[:e] == "t"%>
-	width:100%;
-	text-align:center;
-	font-family:Arial, Helvetica, sans-serif;
-	color:red;
-	opacity:1;
-	-webkit-transition:opacity 1s ease-in-out;
-	-moz-transition:opacity 1s ease-in-out;
-	-ms-transition:opacity 1s ease-in-out;
-	-o-transition:opacity 1s ease-in-out;
-	transition:opacity 1s ease-in-out;
-<% else %>
-	display:none;
-<% end %>
-}
-</style>
 <title>ijlkasjdsaf</title>
-<script>
-function onload() {
-	var url = document.URL;
-	window.history.pushState("", "",url.substring(0,url.indexOf('?')));
-	window.setTimeout(fadeout,5000);
-}
-function fadeout() {
-	var p = document.getElementsByClassName("opacity")[0];
-	p.style.opacity = 0;
-}
-</script>
+
 </head>
-<body onload="onload()">
+<body>
 <h1 style="width:100%;text-align:center;font-family:Arial, Helvetica, sans-serif">
 Welcome to Flickr Photo Search
 </h1>
-<div class="content">
-<img class="flickr" src= "http://s3.froknowsphoto.com/wp-content/uploads/2013/05/flickr-logo.png" alt="Flickr Logo" width =200 height=150>
+<div>
+<img src= "http://s3.froknowsphoto.com/wp-content/uploads/2013/05/flickr-logo.png" alt="Flickr Logo" width =200 height=150>
 <%=form_tag( controller: 'hello', action: 'get_picture') do%>
 <%=text_field_tag 'name'%>
-<br>
 <%= submit_tag 'Search' %>
-<br>
-<br>
-<div class="opacity">
-<h7>
-Could not find a picture
-</h7>
-</div>
-</div>
 <% end %>
+</div>
 </body>
 </html>
