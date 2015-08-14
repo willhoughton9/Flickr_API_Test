@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Results</title>
+	</head>
+	<body>
+	<% unless flash[:pictures].nil? %>
+		<% flash[:pictures].each do |picture_hash| %>
+			<% unless picture_hash['image_url']=="" %>
+				<img src="<%= picture_hash['image_url'] %>"><br />
+				<%= picture_hash['tags_array'].join(' ') %>
+			<% else %>
+				<%= "#{picture_hash['tags_array'].join(' ')} returned no pictures!" %>
+			<% end %>
+			<br /><br /><br />
+		<% end %>
+	<% end %>
+</body>
+</html>

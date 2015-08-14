@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
 
-  root 'welcome#rails'
+  root 'hello#flickr_api_test'
   match ":controller(/:action(/:id))", :via => [:get, :post]
   post "hello/get_picture"
+  namespace :api do
+      namespace :v1 do
+          get "hello/get_picture"
+          post "hello/display"
+      end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
